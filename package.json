@@ -8,11 +8,20 @@
     "micromark-extension-definition-list": "github:wataru-chocola/micromark-extension-definition-list"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "@types/jest": "^27.0.1",
+    "@types/mdast": "^3.0.10",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
+    "jest": "^27.1.0",
+    "mdast-util-from-markdown": "^1.0.0",
     "prettier": "2.3.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.5"
@@ -28,7 +37,7 @@
     "format": "prettier --write \"./**/*.{ts,json}\"",
     "lint": "eslint ./**/*.{ts}",
     "lint-fix": "eslint --fix ./**/*.{ts} && prettier --write ./**/*.{ts,json}",
-    "test": "npm run build && jest --testPathIgnorePatterns=\"/node_modules/|/dev/\"",
+    "test": "npm run build && jest 'test\\.js' --testPathIgnorePatterns=\"/node_modules/\"",
     "build": "npm run clean && tsc",
     "clean": "rimraf index.js index.test.js"
   }
