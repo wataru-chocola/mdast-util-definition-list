@@ -1,8 +1,7 @@
-// @ts-nocheck
 import type { CompileContext, Token } from 'mdast-util-from-markdown';
-import type { Root, Content, Parent } from 'mdast';
+import type { Parent } from 'mdast';
 
-export const definitionListFromMarkdown = {
+export const defListFromMarkdown = {
   enter: {
     defList: enterDefList,
     defListTerm: enterDefListTerm,
@@ -14,11 +13,11 @@ export const definitionListFromMarkdown = {
     defListDescription: exitDefListDescription,
   },
 };
-export const definitionListtoMarkdown = {};
+export const defListToMarkdown = {};
 
-interface DefListNode extends Parent {
+interface DefListNode extends Node {
   type: 'defList';
-  children: [];
+  children: (DefListTermNode | DefListDescriptionNode)[];
 }
 interface DefListTermNode extends Parent {
   type: 'defListTerm';
@@ -26,11 +25,12 @@ interface DefListTermNode extends Parent {
 }
 interface DefListDescriptionNode extends Parent {
   type: 'defListDescription';
+  spread: boolean;
   children: [];
 }
-type ExtendedNode = DefListNode;
 
 function enterDefList(this: CompileContext, token: Token): void {
+  // @ts-ignore
   this.enter<DefListNode>({ type: 'defList', children: [] }, token);
 }
 
@@ -39,6 +39,7 @@ function exitDefList(this: CompileContext, token: Token): void {
 }
 
 function enterDefListTerm(this: CompileContext, token: Token): void {
+  // @ts-ignore
   this.enter<DefListTermNode>({ type: 'defListTerm', children: [] }, token);
 }
 
@@ -47,7 +48,11 @@ function exitDefListTerm(this: CompileContext, token: Token): void {
 }
 
 function enterDefListDescription(this: CompileContext, token: Token): void {
-  this.enter<DefListDescriptionNode>({ type: 'defListDescription', children: [] }, token);
+  // @ts-ignore
+  this.enter<DefListDescriptionNode>(
+    { type: 'defListDescription', spread: Boolean(token._loose), children: [] },
+    token,
+  );
 }
 
 function exitDefListDescription(this: CompileContext, token: Token): void {

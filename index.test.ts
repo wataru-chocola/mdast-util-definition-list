@@ -1,12 +1,12 @@
 // @ts-nocheck
-import { definitionListFromMarkdown } from './index';
+import { defListFromMarkdown } from './index';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { defList } from 'micromark-extension-definition-list';
 
 const compile = (md: string) =>
   fromMarkdown(md, {
     extensions: [defList],
-    mdastExtensions: [definitionListFromMarkdown],
+    mdastExtensions: [defListFromMarkdown],
   });
 
 test('markdown -> mdast', () => {
@@ -62,10 +62,20 @@ Orange
           },
           {
             type: 'defListDescription',
+            spread: false,
             children: [
               {
-                type: 'text',
-                value: 'Pomaceous fruit of plants of the genus Malus in\nthe family Rosaceae.',
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Pomaceous fruit of plants of the genus Malus in\nthe family Rosaceae.',
+                    position: {
+                      start: { column: 5, line: 5, offset: 30 },
+                      end: { column: 25, line: 6, offset: 102 },
+                    },
+                  },
+                ],
                 position: {
                   start: { column: 5, line: 5, offset: 30 },
                   end: { column: 25, line: 6, offset: 102 },
@@ -96,10 +106,20 @@ Orange
           },
           {
             type: 'defListDescription',
+            spread: false,
             children: [
               {
-                type: 'text',
-                value: 'The fruit of an evergreen tree of the genus Citrus.',
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The fruit of an evergreen tree of the genus Citrus.',
+                    position: {
+                      start: { column: 5, line: 9, offset: 115 },
+                      end: { column: 56, line: 9, offset: 166 },
+                    },
+                  },
+                ],
                 position: {
                   start: { column: 5, line: 9, offset: 115 },
                   end: { column: 56, line: 9, offset: 166 },
