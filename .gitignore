@@ -1,3 +1,7 @@
+# Compiled files
+index.js
+index.test.js
+
 # Logs
 logs
 *.log
