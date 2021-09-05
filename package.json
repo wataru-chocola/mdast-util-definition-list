@@ -5,6 +5,7 @@
   "author": "Wataru Watanabe",
   "repository": "wataru-chocola/mdast-util-definition-list",
   "dependencies": {
+    "mdast-util-to-hast": "^11.2.0",
     "micromark-extension-definition-list": "github:wataru-chocola/micromark-extension-definition-list"
   },
   "devDependencies": {
