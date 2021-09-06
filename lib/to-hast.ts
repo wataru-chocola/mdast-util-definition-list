@@ -6,7 +6,7 @@ export const mdastDefList2hast: Handler = (h, node, _parent) => {
   const items = all(h, node);
   const children = [];
   for (let i = 0; i < items.length; i++) {
-    if (i) children.push(u('text', '\n'));
+    children.push(u('text', '\n'));
     children.push(items[i]);
   }
   if (items.length > 0) {

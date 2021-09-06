@@ -17,7 +17,7 @@ const md2html = (md: string) => {
   return hast != null ? toHtml(hast) : '';
 };
 
-test('markdown -> mdast: tight description', () => {
+test('markdown -> html: tight description', () => {
   const md = `
 Test for defList.
 
@@ -29,7 +29,8 @@ Orange
 :   The fruit of an evergreen tree of the genus Citrus.
 `;
   const expected = `<p>Test for defList.</p>
-<dl><dt>Apple</dt>
+<dl>
+<dt>Apple</dt>
 <dd>Pomaceous fruit of plants of the genus Malus in
 the family Rosaceae.
 </dd>
@@ -40,7 +41,7 @@ the family Rosaceae.
   expect(md2html(md)).toBe(expected);
 });
 
-test('markdown -> mdast: spread description', () => {
+test('markdown -> html: spread description', () => {
   const md = `
 Test for defList.
 
@@ -54,7 +55,8 @@ Orange
 :   The fruit of an evergreen tree of the genus Citrus.
 `;
   const expected = `<p>Test for defList.</p>
-<dl><dt>Apple</dt>
+<dl>
+<dt>Apple</dt>
 <dd>
 <p>Pomaceous fruit of plants of the genus Malus in
 the family Rosaceae.</p>
@@ -62,6 +64,63 @@ the family Rosaceae.</p>
 <dt>Orange</dt>
 <dd>
 <p>The fruit of an evergreen tree of the genus Citrus.</p>
+</dd>
+</dl>`;
+  expect(md2html(md)).toBe(expected);
+});
+
+test('markdown -> html: containing other elements', () => {
+  const md = `
+Term 1
+
+:   This is a definition with two paragraphs. Lorem ipsum
+    dolor sit amet, consectetuer adipiscing elit. Aliquam
+    hendrerit mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus.
+
+:   Second definition for term 1, also wrapped in a paragraph
+    because of the blank line preceding it.
+
+Term 2
+
+:   This definition has a code block, a blockquote and a list.
+
+        code block.
+
+    > block quote
+    > on two lines.
+
+    1.  first list item
+    2.  second list item
+`;
+  const expected = `<dl>
+<dt>Term 1</dt>
+<dd>
+<p>This is a definition with two paragraphs. Lorem ipsum
+dolor sit amet, consectetuer adipiscing elit. Aliquam
+hendrerit mi posuere lectus.</p>
+<p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+vitae, risus.</p>
+</dd>
+<dd>
+<p>Second definition for term 1, also wrapped in a paragraph
+because of the blank line preceding it.</p>
+</dd>
+<dt>Term 2</dt>
+<dd>
+<p>This definition has a code block, a blockquote and a list.</p>
+<pre><code>code block.
+</code></pre>
+<blockquote>
+<p>block quote
+on two lines.</p>
+</blockquote>
+<ol>
+<li>first list item</li>
+<li>second list item</li>
+</ol>
 </dd>
 </dl>`;
   expect(md2html(md)).toBe(expected);

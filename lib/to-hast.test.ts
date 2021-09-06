@@ -163,6 +163,10 @@ test('mdast to hast', () => {
         properties: {},
         children: [
           {
+            type: 'text',
+            value: '\n',
+          },
+          {
             type: 'element',
             tagName: 'dt',
             properties: {},
