@@ -25,6 +25,7 @@
     "hast-util-to-html": "^8.0.2",
     "jest": "^27.1.0",
     "mdast-util-from-markdown": "^1.0.0",
+    "mdast-util-to-markdown": "^1.2.1",
     "prettier": "2.3.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.5"
