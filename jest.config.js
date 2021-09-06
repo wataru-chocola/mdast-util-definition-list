@@ -10,6 +10,6 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest',
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!micromark|unist|mdast-util|parse-entities|character-entities)',
+    '/node_modules/(?!micromark|unist|mdast-util|hast-util|property-information|html-void-elements|space-separated-tokens|comma-separated-tokens|stringify-entities|ccount|parse-entities|character-entities)',
   ],
 };
