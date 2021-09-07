@@ -1,4 +1,4 @@
-import type { Handle, Join } from 'mdast-util-to-markdown';
+import type { Handle, Join, Options } from 'mdast-util-to-markdown';
 import { containerPhrasing } from 'mdast-util-to-markdown/lib/util/container-phrasing.js';
 import { containerFlow } from 'mdast-util-to-markdown/lib/util/container-flow.js';
 import { indentLines } from 'mdast-util-to-markdown/lib/util/indent-lines.js';
@@ -46,8 +46,9 @@ const joinDefItems: Join = (left, right, parent, _context) => {
   return 'spread' in right && right.spread ? 1 : 0;
 };
 
-export const defListToMarkdown = {
+export const defListToMarkdown: Options = {
   join: [joinDefItems],
+  unsafe: [{ character: ':', atBreak: true, inConstruct: ['defListTerm'] }],
   handlers: {
     defList: defListHandler,
     defListTerm: defListTermHandler,
