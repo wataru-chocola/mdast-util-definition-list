@@ -1,6 +1,7 @@
 # Compiled files
 index.js
 lib/**.js
+*.d.ts
 
 # Logs
 logs
