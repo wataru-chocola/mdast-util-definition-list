@@ -131,8 +131,7 @@ test('mdast -> markdown', () => {
       end: { column: 1, line: 10, offset: 167 },
     },
   };
-  const md = `
-Test for defList.
+  const md = `Test for defList.
 
 Apple
 :   Pomaceous fruit of plants of the genus Malus in
