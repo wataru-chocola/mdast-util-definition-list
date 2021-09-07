@@ -1,6 +1,6 @@
 {
   "name": "mdast-util-definition-list",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "mdast extension for definition list",
   "author": "Wataru Watanabe",
   "license": "MIT",
