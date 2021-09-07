@@ -27,10 +27,10 @@ const defListDescriptionHandler: Handle = (node, _parent, context) => {
 
   function map(line: string, index: number, blank: boolean) {
     if (index) {
-      return blank ? '    ' : '    ' + line;
+      return blank ? '' : ' '.repeat(4) + line;
     }
 
-    return blank ? ':   ' : ':   ' + line;
+    return blank ? ':' + ' '.repeat(3) : ':' + ' '.repeat(3) + line;
   }
 };
 

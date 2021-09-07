@@ -1,6 +1,5 @@
 import { defListToMarkdown } from './to-markdown';
 import { toMarkdown } from 'mdast-util-to-markdown';
-import { defList } from 'micromark-extension-definition-list';
 
 const compile = (mdast: any) =>
   toMarkdown(mdast, {
