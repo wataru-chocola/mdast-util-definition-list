@@ -23,7 +23,10 @@
     "index.js"
   ],
   "dependencies": {
+    "@types/mdast": "^3.0.10",
+    "mdast-util-from-markdown": "^1.0.0",
     "mdast-util-to-hast": "^11.2.0",
+    "mdast-util-to-markdown": "^1.2.1",
     "micromark-extension-definition-list": "^1.0.0",
     "unist-builder": "^3.0.0"
   },
@@ -32,18 +35,14 @@
     "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "@babel/preset-env": "^7.15.4",
     "@types/jest": "^27.0.1",
-    "@types/mdast": "^3.0.10",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^27.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "hast-util-to-html": "^8.0.2",
     "jest": "^27.1.0",
-    "mdast-util-from-markdown": "^1.0.0",
-    "mdast-util-to-markdown": "^1.2.1",
     "prettier": "2.3.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.5"
@@ -61,6 +60,6 @@
     "test": "npm run build && jest 'test\\.js' --testPathIgnorePatterns=\"/node_modules/\"",
     "build": "npm run clean && tsc",
     "prepack": "npm run build",
-    "clean": "rimraf index.js index.test.js"
+    "clean": "rimraf index.js index.test.js lib/*.d.ts lib/*.js"
   }
 }
