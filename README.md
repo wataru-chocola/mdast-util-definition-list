@@ -1,5 +1,7 @@
 # mdast-util-definition-list
 
+[![Node.js CI](https://github.com/wataru-chocola/mdast-util-definition-list/actions/workflows/node.js.yml/badge.svg)](https://github.com/wataru-chocola/mdast-util-definition-list/actions/workflows/node.js.yml)
+
 mdast extension for definition list
 
 ## Feature
