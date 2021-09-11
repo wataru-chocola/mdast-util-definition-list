@@ -82,7 +82,7 @@ Orange
               },
             ],
             position: {
-              start: { column: 1, line: 5, offset: 26 },
+              start: { column: 5, line: 5, offset: 30 },
               end: { column: 1, line: 8, offset: 104 },
             },
           },
@@ -126,7 +126,7 @@ Orange
               },
             ],
             position: {
-              start: { column: 1, line: 9, offset: 111 },
+              start: { column: 5, line: 9, offset: 115 },
               end: { column: 1, line: 10, offset: 167 },
             },
           },
