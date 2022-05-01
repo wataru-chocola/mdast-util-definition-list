@@ -42,7 +42,7 @@
     "jest": "27.5.1",
     "prettier": "2.6.1",
     "rimraf": "3.0.2",
-    "typescript": "4.5.5"
+    "typescript": "4.6.4"
   },
   "peerDependencies": {},
   "keywords": [
