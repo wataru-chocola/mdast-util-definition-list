@@ -6,3 +6,4 @@ export {
   mdastDefListTerm2hast,
   mdastDefListDescription2hast,
 } from './lib/to-hast.js';
+export * from './lib/types';
