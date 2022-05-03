@@ -54,6 +54,7 @@
     "format": "prettier --write \"./**/*.{ts,json}\"",
     "lint": "eslint ./**/*.ts",
     "lint-fix": "eslint --fix ./**/*.ts && prettier --write ./**/*.{ts,json}",
+    "typecheck": "tsc",
     "test": "npm run build && NODE_OPTIONS=--experimental-vm-modules jest 'test\\.js' --testPathIgnorePatterns=\"/node_modules/\"",
     "build": "npm run clean && tsc",
     "prepack": "npm run build",

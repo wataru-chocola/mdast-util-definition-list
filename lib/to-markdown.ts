@@ -35,11 +35,9 @@ const defListDescriptionHandler: Handle = (node, _parent, context) => {
 };
 
 const joinDefItems: Join = (left, right, parent, _context) => {
-  // @ts-ignore
   if (parent.type !== 'defList') {
     return;
   }
-  // @ts-ignore
   if (left.type === 'defListDescription' && right.type === 'defListTerm') {
     return 1;
   }
