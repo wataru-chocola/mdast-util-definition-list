@@ -38,7 +38,7 @@
     "eslint": "8.31.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
-    "hast-util-to-html": "8.0.3",
+    "hast-util-to-html": "8.0.4",
     "jest": "27.5.1",
     "npm-check-updates": "12.5.12",
     "prettier": "2.8.1",
