@@ -1,6 +1,7 @@
 import { defListFromMarkdown } from './from-markdown';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { defList } from 'micromark-extension-definition-list';
+import { dedent } from 'ts-dedent';
 
 const compile = (md: string) =>
   fromMarkdown(md, {
@@ -10,15 +11,15 @@ const compile = (md: string) =>
 
 test('markdown -> mdast', () => {
   const md = `
-Test for defList.
+  Test for defList.
 
-Apple
-:   Pomaceous fruit of plants of the genus Malus in
-    the family Rosaceae.
+  Apple
+  :   Pomaceous fruit of plants of the genus Malus in
+      the family Rosaceae.
 
-Orange
-:   The fruit of an evergreen tree of the genus Citrus.
-`;
+  Orange
+  :   The fruit of an evergreen tree of the genus Citrus.
+  `;
   const mdast = {
     type: 'root',
     children: [
@@ -127,21 +128,21 @@ Orange
             ],
             position: {
               start: { column: 5, line: 9, offset: 115 },
-              end: { column: 1, line: 10, offset: 167 },
+              end: { column: 56, line: 9, offset: 166 },
             },
           },
         ],
         position: {
           start: { column: 1, line: 4, offset: 20 },
-          end: { column: 1, line: 10, offset: 167 },
+          end: { column: 56, line: 9, offset: 166 },
         },
       },
     ],
     position: {
       start: { column: 1, line: 1, offset: 0 },
-      end: { column: 1, line: 10, offset: 167 },
+      end: { column: 56, line: 9, offset: 166 },
     },
   };
-  const result = compile(md);
+  const result = compile('\n' + dedent(md));
   expect(result).toEqual(mdast);
 });
