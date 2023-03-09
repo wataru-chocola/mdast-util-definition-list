@@ -1,5 +1,6 @@
 import { defListToMarkdown } from './to-markdown';
 import { toMarkdown } from 'mdast-util-to-markdown';
+import { dedent } from 'ts-dedent';
 
 const compile = (mdast: any) =>
   toMarkdown(mdast, {
@@ -78,17 +79,18 @@ test('mdast -> markdown: basic', () => {
       },
     ],
   };
-  const md = `Test for defList.
+  const md = `
+  Test for defList.
 
-Apple
-:   Pomaceous fruit of plants of the genus Malus in
-    the family Rosaceae.
+  Apple
+  :   Pomaceous fruit of plants of the genus Malus in
+      the family Rosaceae.
 
-Orange
-:   The fruit of an evergreen tree of the genus Citrus.
-`;
+  Orange
+  :   The fruit of an evergreen tree of the genus Citrus.
+  `;
   const result = compile(mdast);
-  expect(result).toEqual(md);
+  expect(result).toEqual(dedent(md) + '\n');
 });
 
 test('mdast -> markdown: multiples items, spreading', () => {
@@ -174,21 +176,22 @@ test('mdast -> markdown: multiples items, spreading', () => {
       },
     ],
   };
-  const md = `Apple
+  const md = `
+  Apple
 
-:   Pomaceous fruit of plants of the genus Malus in
-    the family Rosaceae.
+  :   Pomaceous fruit of plants of the genus Malus in
+      the family Rosaceae.
 
-:   Pomaceous fruit of plants of the genus Malus in
-    the family Rosaceae.
+  :   Pomaceous fruit of plants of the genus Malus in
+      the family Rosaceae.
 
-Orange1
-Orange2
+  Orange1
+  Orange2
 
-:   The fruit of an evergreen tree of the genus Citrus.
-`;
+  :   The fruit of an evergreen tree of the genus Citrus.
+  `;
   const result = compile(mdast);
-  expect(result).toEqual(md);
+  expect(result).toEqual(dedent(md) + '\n');
 });
 
 test('mdast -> markdown: unsafe', () => {
@@ -265,13 +268,13 @@ test('mdast -> markdown: unsafe', () => {
   };
   const md = `Test for defList.
 
-\\:Apple
-:   Pomaceous fruit of plants of the genus Malus in
-    the family Rosaceae.
+  \\:Apple
+  :   Pomaceous fruit of plants of the genus Malus in
+      the family Rosaceae.
 
-Orange:
-:   The fruit of an evergreen tree of the genus Citrus.
-`;
+  Orange:
+  :   The fruit of an evergreen tree of the genus Citrus.
+  `;
   const result = compile(mdast);
-  expect(result).toEqual(md);
+  expect(result).toEqual(dedent(md) + '\n');
 });
