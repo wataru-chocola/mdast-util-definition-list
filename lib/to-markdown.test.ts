@@ -194,7 +194,7 @@ test('mdast -> markdown: multiples items, spreading', () => {
   expect(result).toEqual(dedent(md) + '\n');
 });
 
-test('mdast -> markdown: unsafe', () => {
+test('mdast -> markdown: unsafe (1)', () => {
   const mdast = {
     type: 'root',
     children: [
@@ -215,7 +215,7 @@ test('mdast -> markdown: unsafe', () => {
             children: [
               {
                 type: 'text',
-                value: ':Apple',
+                value: ': Apple',
               },
             ],
           },
@@ -268,12 +268,45 @@ test('mdast -> markdown: unsafe', () => {
   };
   const md = `Test for defList.
 
-  \\:Apple
+  \\: Apple
   :   Pomaceous fruit of plants of the genus Malus in
       the family Rosaceae.
 
   Orange:
   :   The fruit of an evergreen tree of the genus Citrus.
+  `;
+  const result = compile(mdast);
+  expect(result).toEqual(dedent(md) + '\n');
+});
+
+test('mdast -> markdown: unsafe (2)', () => {
+  const mdast = {
+    type: 'root',
+    children: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            value: 'Not Term',
+          },
+        ],
+      },
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            value: ': Not Definition.',
+          },
+        ],
+      },
+    ],
+  };
+  const md = `
+  Not Term
+
+  \\: Not Definition.
   `;
   const result = compile(mdast);
   expect(result).toEqual(dedent(md) + '\n');

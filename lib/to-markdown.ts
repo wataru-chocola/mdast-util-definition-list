@@ -51,7 +51,7 @@ const joinDefItems: Join = (left, right, parent, _state) => {
 
 export const defListToMarkdown: Options = {
   join: [joinDefItems],
-  unsafe: [{ character: ':', atBreak: true, inConstruct: ['defListTerm'] }],
+  unsafe: [{ character: ':', atBreak: true, after: '(?:[ \t\r\n])' }],
   handlers: {
     defList: defListHandler,
     defListTerm: defListTermHandler,
