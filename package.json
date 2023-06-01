@@ -41,7 +41,7 @@
     "eslint-plugin-import": "2.27.5",
     "hast-util-to-html": "8.0.4",
     "jest": "27.5.1",
-    "npm-check-updates": "12.5.12",
+    "npm-check-updates": "16.10.12",
     "prettier": "2.8.8",
     "rimraf": "3.0.2",
     "ts-dedent": "2.2.0",
