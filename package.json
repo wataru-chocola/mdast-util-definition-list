@@ -1,4 +1,5 @@
 {
+  "packageManager": "pnpm@8.8.0",
   "name": "mdast-util-definition-list",
   "version": "1.4.0",
   "description": "mdast extension for definition list",
@@ -26,6 +27,7 @@
   ],
   "dependencies": {
     "@types/mdast": "^3.0.10",
+    "@types/unist": "^2.0.8",
     "mdast-util-from-markdown": "^1.0.0",
     "mdast-util-to-hast": "^12.0.0",
     "mdast-util-to-markdown": "^1.5.0",
