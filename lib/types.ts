@@ -22,12 +22,20 @@ export interface DefListDescriptionNode extends Parent {
 }
 
 declare module 'mdast' {
-  // module augmentation
+  interface RootContentMap {
+    deflist: DefListNode;
+    // mdast.RootContent contains all nodes even if they are not suppose to be children of Root.
+    deflistTerm: DefListTermNode;
+    deflistDescription: DefListDescriptionNode;
+  }
+
   interface BlockContentMap {
     deflist: DefListNode;
+    deflistTerm: DefListTermNode;
+    deflistDescription: DefListDescriptionNode;
+  }
 
-    // HACK: these are NOT block contents
-    deflistterm: DefListTermNode;
-    deflistdescription: DefListDescriptionNode;
+  interface PhrasingContentMap {
+    deflistTerm: DefListTermNode;
   }
 }

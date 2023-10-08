@@ -1,14 +1,17 @@
+import { test, expect } from 'vitest';
+
 import { defListToMarkdown } from './to-markdown';
 import { toMarkdown } from 'mdast-util-to-markdown';
 import { dedent } from 'ts-dedent';
+import type { Root } from 'mdast';
 
-const compile = (mdast: any) =>
+const compile = (mdast: Root) =>
   toMarkdown(mdast, {
     extensions: [defListToMarkdown],
   });
 
 test('mdast -> markdown: basic', () => {
-  const mdast = {
+  const mdast: Root = {
     type: 'root',
     children: [
       {
@@ -94,7 +97,7 @@ test('mdast -> markdown: basic', () => {
 });
 
 test('mdast -> markdown: multiples items, spreading', () => {
-  const mdast = {
+  const mdast: Root = {
     type: 'root',
     children: [
       {
@@ -195,7 +198,7 @@ test('mdast -> markdown: multiples items, spreading', () => {
 });
 
 test('mdast -> markdown: unsafe (1)', () => {
-  const mdast = {
+  const mdast: Root = {
     type: 'root',
     children: [
       {
@@ -280,7 +283,7 @@ test('mdast -> markdown: unsafe (1)', () => {
 });
 
 test('mdast -> markdown: unsafe (2)', () => {
-  const mdast = {
+  const mdast: Root = {
     type: 'root',
     children: [
       {

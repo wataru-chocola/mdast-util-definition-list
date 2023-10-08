@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest';
 import { defListFromMarkdown } from './from-markdown';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { defList } from 'micromark-extension-definition-list';
