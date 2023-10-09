@@ -1,9 +1,15 @@
-import { all, Handler } from 'mdast-util-to-hast';
+import type { Handler } from 'mdast-util-to-hast';
+import type { Element } from 'hast';
 import { u } from 'unist-builder';
 import { types } from 'micromark-extension-definition-list';
+import type {
+  DefListNode as MdastDefList,
+  DefListTermNode as MdastDefListTerm,
+  DefListDescriptionNode as MdastDefListDescription,
+} from './types.js';
 
-export const mdastDefList2hast: Handler = (h, node, _parent) => {
-  const items = all(h, node);
+export const mdastDefList2hast: Handler = (state, node: MdastDefList, _parent) => {
+  const items = state.all(node);
   const children = [];
   for (let i = 0; i < items.length; i++) {
     children.push(u('text', '\n'));
@@ -12,16 +18,31 @@ export const mdastDefList2hast: Handler = (h, node, _parent) => {
   if (items.length > 0) {
     children.push(u('text', '\n'));
   }
-  return h(node, 'dl', {}, children);
+
+  const result: Element = { type: 'element', tagName: 'dl', children, properties: {} };
+  state.patch(node, result);
+  return result;
 };
 
-export const mdastDefListTerm2hast: Handler = (h, node, _parent) => {
-  return h(node, 'dt', {}, all(h, node));
+export const mdastDefListTerm2hast: Handler = (state, node: MdastDefListTerm, _parent) => {
+  const result: Element = {
+    type: 'element',
+    tagName: 'dt',
+    properties: {},
+    children: state.all(node),
+  };
+  state.patch(node, result);
+  return result;
 };
 
-export const mdastDefListDescription2hast: Handler = (h, node, _parent) => {
+export const mdastDefListDescription2hast: Handler = (
+  state,
+  node: MdastDefListDescription,
+  _parent,
+) => {
   const children = [];
-  const tmpChildren = all(h, node);
+  const tmpChildren = state.all(node);
+
   for (let i = 0; i < tmpChildren.length; i++) {
     const child = tmpChildren[i];
 
@@ -40,7 +61,9 @@ export const mdastDefListDescription2hast: Handler = (h, node, _parent) => {
     children.push(u('text', '\n'));
   }
 
-  return h(node, 'dd', {}, children);
+  const result: Element = { type: 'element', tagName: 'dd', properties: {}, children };
+  state.patch(node, result);
+  return result;
 };
 
 export const defListHastHandlers = {

@@ -1,3 +1,5 @@
+import { test, expect } from 'vitest';
+
 import { defListFromMarkdown } from './from-markdown';
 import { defListToMarkdown } from './to-markdown';
 
@@ -14,6 +16,8 @@ const md2md = (md: string) => {
   });
   return toMarkdown(mdast, {
     extensions: [defListToMarkdown],
+    fences: false,
+    listItemIndent: 'tab',
   });
 };
 

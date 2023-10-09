@@ -1,4 +1,5 @@
 import type { Handle, Join, Options } from 'mdast-util-to-markdown';
+import type { DefListNode, DefListDescriptionNode, DefListTermNode } from './types.js';
 
 declare module 'mdast-util-to-markdown' {
   interface ConstructNameMap {
@@ -8,23 +9,24 @@ declare module 'mdast-util-to-markdown' {
   }
 }
 
-const defListHandler: Handle = (node, _parent, state, info) => {
+const defListHandler: Handle = (node: DefListNode, _parent, state, info) => {
   const exit = state.enter('defList');
   const value = state.containerFlow(node, info);
   exit();
   return value;
 };
 
-const defListTermHandler: Handle = (node, _parent, state, info) => {
+const defListTermHandler: Handle = (node: DefListTermNode, _parent, state, info) => {
   const exit = state.enter('defListTerm');
   const subexit = state.enter('phrasing');
+  // @ts-ignore -- cannot extend phrasingParents
   const value = state.containerPhrasing(node, { ...info, before: '\n', after: '\n' });
   subexit();
   exit();
   return value;
 };
 
-const defListDescriptionHandler: Handle = (node, _parent, state, info) => {
+const defListDescriptionHandler: Handle = (node: DefListDescriptionNode, _parent, state, info) => {
   const exit = state.enter('defListDescription');
   const value = state.indentLines(state.containerFlow(node, info), map);
   exit();
@@ -43,6 +45,7 @@ const joinDefItems: Join = (left, right, parent, _state) => {
   if (parent.type !== 'defList') {
     return;
   }
+  // @ts-ignore - cannot extend FlowChildren type
   if (left.type === 'defListDescription' && right.type === 'defListTerm') {
     return 1;
   }

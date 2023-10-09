@@ -1,14 +1,18 @@
+import { test, expect } from 'vitest';
+
 import { toHast } from 'mdast-util-to-hast';
 import { defListHastHandlers } from './to-hast';
 
-const mdast2hast = (mdast: any) => {
+import type { Root } from 'mdast';
+
+const mdast2hast = (mdast: Root) => {
   return toHast(mdast, {
     handlers: defListHastHandlers,
   });
 };
 
 test('mdast to hast', () => {
-  const mdast = {
+  const mdast: Root = {
     type: 'root',
     children: [
       {
