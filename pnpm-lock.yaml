@@ -50,8 +50,8 @@ devDependencies:
     specifier: 9.0.0
     version: 9.0.0
   npm-check-updates:
-    specifier: 16.14.5
-    version: 16.14.5
+    specifier: 16.14.6
+    version: 16.14.6
   prettier:
     specifier: 3.0.3
     version: 3.0.3
@@ -2982,8 +2982,8 @@ packages:
       npm-normalize-package-bin: 3.0.1
     dev: true
 
-  /npm-check-updates@16.14.5:
-    resolution: {integrity: sha512-f7v3YzPUgadtkB2LAVhiWMjrSejJ0N8OM9JjjVfxBz2neHqmPSWQUAUA+U/p3xeXHl9bghRD6knRqBhm9dkRGg==}
+  /npm-check-updates@16.14.6:
+    resolution: {integrity: sha512-sJ6w4AmSDP7YzBXah94Ul2JhiIbjBDfx9XYgib15um2wtiQkOyjE7Lov3MNUSQ84Ry7T81mE4ynMbl/mGbK4HQ==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
