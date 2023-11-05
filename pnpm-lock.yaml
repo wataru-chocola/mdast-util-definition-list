@@ -29,7 +29,7 @@ dependencies:
 
 devDependencies:
   '@types/hast':
-    specifier: ^3.0.1
+    specifier: 3.0.1
     version: 3.0.1
   '@typescript-eslint/eslint-plugin':
     specifier: 6.7.4
@@ -65,7 +65,7 @@ devDependencies:
     specifier: 5.2.2
     version: 5.2.2
   vitest:
-    specifier: ^0.34.6
+    specifier: 0.34.6
     version: 0.34.6
 
 packages:
