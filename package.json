@@ -43,7 +43,7 @@
     "eslint-plugin-import": "2.29.1",
     "hast-util-to-html": "9.0.4",
     "npm-check-updates": "17.1.13",
-    "prettier": "3.3.3",
+    "prettier": "3.4.2",
     "rimraf": "6.0.1",
     "ts-dedent": "2.2.0",
     "typescript": "5.6.3",
