@@ -1,5 +1,5 @@
 {
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@9.15.9",
   "name": "mdast-util-definition-list",
   "version": "2.0.0",
   "description": "mdast extension for definition list",
