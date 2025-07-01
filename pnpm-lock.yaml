@@ -49,8 +49,8 @@ importers:
         specifier: 9.0.5
         version: 9.0.5
       npm-check-updates:
-        specifier: 17.1.16
-        version: 17.1.16
+        specifier: 17.1.18
+        version: 17.1.18
       prettier:
         specifier: 3.5.3
         version: 3.5.3
@@ -1523,8 +1523,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  npm-check-updates@17.1.16:
-    resolution: {integrity: sha512-9nohkfjLRzLfsLVGbO34eXBejvrOOTuw5tvNammH73KEFG5XlFoi3G2TgjTExHtnrKWCbZ+mTT+dbNeSjASIPw==}
+  npm-check-updates@17.1.18:
+    resolution: {integrity: sha512-bkUy2g4v1i+3FeUf5fXMLbxmV95eG4/sS7lYE32GrUeVgQRfQEk39gpskksFunyaxQgTIdrvYbnuNbO/pSUSqw==}
     engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
     hasBin: true
 
@@ -3744,7 +3744,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  npm-check-updates@17.1.16: {}
+  npm-check-updates@17.1.18: {}
 
   object-inspect@1.12.3: {}
 
