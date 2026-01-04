@@ -37,7 +37,7 @@
   "devDependencies": {
     "@eslint/js": "9.39.2",
     "@types/hast": "3.0.4",
-    "@types/node": "^24.9.1",
+    "@types/node": "24.9.1",
     "eslint": "9.39.2",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
