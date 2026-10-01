@@ -70,11 +70,11 @@ importers:
         specifier: 8.59.4
         version: 8.59.4(eslint@10.3.0)(typescript@6.0.3)
       vite:
-        specifier: 7.3.3
-        version: 7.3.3(@types/node@24.9.1)
+        specifier: 7.3.6
+        version: 7.3.6(@types/node@24.9.1)
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@types/node@24.9.1)(vite@7.3.3(@types/node@24.9.1))
+        version: 4.1.5(@types/node@24.9.1)(vite@7.3.6(@types/node@24.9.1))
 
 packages:
 
@@ -1770,8 +1770,8 @@ packages:
   util@0.12.5:
     resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
 
-  vite@7.3.3:
-    resolution: {integrity: sha512-/4XH147Ui7OGTjg3HbdWe5arnZQSbfuRzdr9Ec7TQi5I7R+ir0Rlc9GIvD4v0XZurELqA035KVXJXpR61xhiTA==}
+  vite@7.3.6:
+    resolution: {integrity: sha512-4XP60spRGjSZFf1qYH+dJIkK2znL3zQfl9KkOV9MkkRR/3Dls0dxaBsQPTloEc5BLXWPL9vsOxopxyKoMmDueg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -2321,13 +2321,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.5(vite@7.3.3(@types/node@24.9.1))':
+  '@vitest/mocker@4.1.5(vite@7.3.6(@types/node@24.9.1))':
     dependencies:
       '@vitest/spy': 4.1.5
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.3(@types/node@24.9.1)
+      vite: 7.3.6(@types/node@24.9.1)
 
   '@vitest/pretty-format@4.1.5':
     dependencies:
@@ -3858,7 +3858,7 @@ snapshots:
       is-typed-array: 1.1.15
       which-typed-array: 1.1.18
 
-  vite@7.3.3(@types/node@24.9.1):
+  vite@7.3.6(@types/node@24.9.1):
     dependencies:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
@@ -3870,10 +3870,10 @@ snapshots:
       '@types/node': 24.9.1
       fsevents: 2.3.3
 
-  vitest@4.1.5(@types/node@24.9.1)(vite@7.3.3(@types/node@24.9.1)):
+  vitest@4.1.5(@types/node@24.9.1)(vite@7.3.6(@types/node@24.9.1)):
     dependencies:
       '@vitest/expect': 4.1.5
-      '@vitest/mocker': 4.1.5(vite@7.3.3(@types/node@24.9.1))
+      '@vitest/mocker': 4.1.5(vite@7.3.6(@types/node@24.9.1))
       '@vitest/pretty-format': 4.1.5
       '@vitest/runner': 4.1.5
       '@vitest/snapshot': 4.1.5
@@ -3890,7 +3890,7 @@ snapshots:
       tinyexec: 1.1.2
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vite: 7.3.3(@types/node@24.9.1)
+      vite: 7.3.6(@types/node@24.9.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.9.1
