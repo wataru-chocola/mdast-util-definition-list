@@ -192,7 +192,7 @@ importers:
         specifier: 3.0.5
         version: 3.0.5
       '@types/node':
-        specifier: ^24.19.0
+        specifier: 24.19.1
         version: 24.19.1
       hast-util-to-html:
         specifier: 9.0.5
