@@ -40,8 +40,8 @@ importers:
         specifier: 9.0.5
         version: 9.0.5
       npm-check-updates:
-        specifier: 19.2.1
-        version: 19.2.1
+        specifier: 19.6.6
+        version: 19.6.6
       oxfmt:
         specifier: 0.71.0
         version: 0.71.0
@@ -1007,8 +1007,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  npm-check-updates@19.2.1:
-    resolution: {integrity: sha512-jWIMuE6K+DSDXfjXpM3SlJ+Gg07ZV57dlFKPr2EZTpimFk9y+gt138+kmP3Uocdqk1PZlOKpTpFvAx7Z1QCeog==}
+  npm-check-updates@19.6.6:
+    resolution: {integrity: sha512-AvlRcnlUEyBEJfblUSjYMJwYKvCIWDRuCDa6x3hyUMTMkI3kslmFm0LDqwgzQfshfNh0Z3ouKiA4fLjRN7HejQ==}
     engines: {node: '>=20.0.0', npm: '>=8.12.1'}
     hasBin: true
 
@@ -2066,7 +2066,7 @@ snapshots:
 
   nanoid@3.3.12: {}
 
-  npm-check-updates@19.2.1: {}
+  npm-check-updates@19.6.6: {}
 
   object-is@1.1.5:
     dependencies:
