@@ -1,5 +1,5 @@
 {
-  "packageManager": "pnpm@10.33.4",
+  "packageManager": "pnpm@10.34.6",
   "name": "mdast-util-definition-list",
   "version": "2.0.0",
   "description": "mdast extension for definition list",
@@ -38,7 +38,6 @@
     "@types/hast": "3.0.5",
     "@types/node": "^24.19.0",
     "hast-util-to-html": "9.0.5",
-    "npm-check-updates": "19.2.1",
     "oxfmt": "0.71.0",
     "oxlint": "1.86.0",
     "oxlint-tsgolint": "7.0.2003",
